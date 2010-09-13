@@ -87,31 +87,39 @@ repository "http://github.com/hma/$dist";
 #  udate Perl toolchain modules to recent versions
 #
 
+requires 'Net::FTP'             => '2.75';                    # 5.8.5  core
 requires 'Encode'               => '2.03';
 requires 'Pod::Man'             => '2.22';                    # 5.10.1 core
+requires 'Compress::Zlib'       => '2.024';                   # 5.12.0 core
+requires 'Digest::MD5'          => '2.39';                    # 5.10.1 core
 requires 'LWP'                  => '5.836';
 requires 'ExtUtils::MakeMaker'  => '6.56';                    # 5.12.0 core
 requires 'Digest::SHA'          => '5.47';                    # 5.10.1 core
+requires 'File::Which';
+requires 'File::Temp'           => '0.22';                    # 5.10.1 core
+requires 'File::HomeDir'        => '0.88';
+requires 'Storable'             => '2.19';                    # 5.8.9  core
+requires 'YAML::Syck'           => '1.14';
 requires 'YAML'                 => '0.71' if $] >= 5.008_001;
 requires 'YAML::XS'             => '0.33' if $] >= 5.008_005;
 requires 'Test::More'           => '0.62';                    # 5.8.8  core
 requires 'Test::Harness'        => '3.17';                    # 5.10.1 core
 requires 'ExtUtils::CBuilder'   => '0.2602';                  # 5.10.1 core
 requires 'ExtUtils::ParseXS'    => '2.2002';                  # 5.10.1 core
-requires 'File::Temp'           => '0.22';                    # 5.10.1 core
 requires 'IO::File'             => '1.13';                    # 5.8.8  core
 requires 'YAML::Tiny'           => '1.41';
 requires 'Archive::Tar'         => '1.52';                    # 5.10.1 core
 requires 'ExtUtils::Install'    => '1.54';                    # 5.10.1 core
 requires 'ExtUtils::Installed'  => '1.999_001';               # 5.10.1 core
 requires 'Module::Build'        => '0.340201';                # 5.10.1 core
+requires 'Text::Glob';
 requires 'CPAN'                 => $WANT_CPAN;
 requires 'Term::ReadKey';
 requires 'Term::ReadLine::Perl';
 
 build_requires 'Test::More';
 
-clean_files "$dist-*";
+clean_files "$dist-* Debian_CPANTS.txt";
 makemaker_args dist => { COMPRESS => 'gzip -9f' };
 
 auto_install;

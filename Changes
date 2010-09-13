@@ -1,5 +1,18 @@
 Revision history for Task-BeLike-HMA-Toolchain
 
+0.02_01 Sep 13, 2010
+
+        - Made more dependencies explicit for ease of individual update
+            * Compress::Zlib
+            * Digest::MD5
+            * Net::FTP
+        - Added optional modules for enhancement of CPAN.pm
+            * File::HomeDir
+            * File::Which
+            * Storable
+            * Text::Glob
+        - Added YAML::Syck for YAML support in very legacy Perls
+
 0.01    Sep 11, 2010
 
         - Initial commit and release to GitHub
