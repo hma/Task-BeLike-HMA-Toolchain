@@ -5,7 +5,7 @@ use warnings;
 
 use 5.006;
 
-our $VERSION = '0.01';
+our $VERSION = '0.02_01';
 
 $VERSION = eval $VERSION;
 
@@ -19,7 +19,7 @@ Task::BeLike::HMA::Toolchain - HMA's Perl toolchain update
 
 =head1 VERSION
 
-This is version 0.01 of Task::BeLike::HMA::Toolchain as of Sep 11, 2010.
+This is version 0.02_01 of Task::BeLike::HMA::Toolchain as of Sep 13, 2010.
 
 =head1 SYNOPSIS
 
