@@ -89,12 +89,15 @@ repository "http://github.com/hma/$dist";
 
 requires 'Net::FTP'             => '2.75';                    # 5.8.5  core
 requires 'Encode'               => '2.03';
+requires 'Test'                 => '1.25';                    # 5.8.5  core
 requires 'Pod::Man'             => '2.22';                    # 5.10.1 core
 requires 'Compress::Zlib'       => '2.024';                   # 5.12.0 core
 requires 'Digest::MD5'          => '2.39';                    # 5.10.1 core
 requires 'LWP'                  => '5.836';
 requires 'ExtUtils::MakeMaker'  => '6.56';                    # 5.12.0 core
 requires 'Digest::SHA'          => '5.47';                    # 5.10.1 core
+requires 'File::Spec'           => '3.29';                    # 5.8.9  core
+requires 'File::Path'           => '2.08';                    # 5.11.1 core
 requires 'File::Which';
 requires 'File::Temp'           => '0.22';                    # 5.10.1 core
 requires 'File::HomeDir'        => '0.88';
