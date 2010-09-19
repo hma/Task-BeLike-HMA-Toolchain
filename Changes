@@ -17,6 +17,7 @@ Revision history for Task-BeLike-HMA-Toolchain
             * Storable
             * Text::Glob
         - Added YAML::Syck for YAML support in very legacy Perls
+        - Bumped Module::Build and dependencies to more recent versions
 
 0.01    Sep 11, 2010
 
