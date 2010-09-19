@@ -101,7 +101,7 @@ requires 'File::Spec'           => '3.29';                    # 5.8.9  core
 requires 'File::Path'           => '2.08';                    # 5.11.1 core
 requires 'File::Which';
 requires 'File::Temp'           => '0.22';                    # 5.10.1 core
-requires 'File::HomeDir'        => '0.88';
+requires 'File::HomeDir'        => '0.93';
 requires 'Storable'             => '2.19';                    # 5.8.9  core
 requires 'YAML::Syck'           => '1.14';
 requires 'YAML'                 => '0.71' if $] >= 5.008_001;
