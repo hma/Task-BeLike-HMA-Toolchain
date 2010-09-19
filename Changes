@@ -1,14 +1,16 @@
 Revision history for Task-BeLike-HMA-Toolchain
 
-0.02_01 Sep 14, 2010
+0.02_01 Sep 19, 2010
 
         - Made more dependencies explicit for ease of individual update
             * Compress::Zlib
             * Digest::MD5
+            * ExtUtils::Manifest
             * File::Path
             * File::Spec
             * Net::FTP
             * Test
+            * version.pm
         - Added optional modules for enhancement of CPAN.pm
             * File::HomeDir
             * File::Which

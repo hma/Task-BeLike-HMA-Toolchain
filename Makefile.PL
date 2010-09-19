@@ -87,6 +87,7 @@ repository "http://github.com/hma/$dist";
 #  udate Perl toolchain modules to recent versions
 #
 
+requires 'version'              => '0.77';                    # 5.10.1 core
 requires 'Net::FTP'             => '2.75';                    # 5.8.5  core
 requires 'Encode'               => '2.03';
 requires 'Test'                 => '1.25';                    # 5.8.5  core
@@ -108,6 +109,7 @@ requires 'YAML::XS'             => '0.33' if $] >= 5.008_005;
 requires 'Test::More'           => '0.62';                    # 5.8.8  core
 requires 'Test::Harness'        => '3.17';                    # 5.10.1 core
 requires 'ExtUtils::CBuilder'   => '0.2602';                  # 5.10.1 core
+requires 'ExtUtils::Manifest'   => '1.58';                    # 5.13.3 core
 requires 'ExtUtils::ParseXS'    => '2.2002';                  # 5.10.1 core
 requires 'IO::File'             => '1.13';                    # 5.8.8  core
 requires 'YAML::Tiny'           => '1.41';
