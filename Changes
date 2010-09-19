@@ -18,6 +18,7 @@ Revision history for Task-BeLike-HMA-Toolchain
             * Text::Glob
         - Added YAML::Syck for YAML support in very legacy Perls
         - Bumped Module::Build and dependencies to more recent versions
+        - Changed minimum Perl version to 5.6.1
 
 0.01    Sep 11, 2010
 
