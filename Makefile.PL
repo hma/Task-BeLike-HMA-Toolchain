@@ -3,7 +3,7 @@
 #
 #  Copyright (c) 2010 Henning Manske. All rights reserved.
 #
-#  This module is free software. You can redistribute it and/or modify it
+#  This program is free software. You can redistribute it and/or modify it
 #  under the terms of either: the GNU General Public License as published
 #  by the Free Software Foundation; or the Artistic License.
 #
@@ -109,13 +109,12 @@ requires 'YAML::XS'             => '0.33' if $] >= 5.008_005;
 requires 'Test::More'           => '0.62';                    # 5.8.8  core
 requires 'Test::Harness'        => '3.17';                    # 5.10.1 core
 requires 'ExtUtils::CBuilder'   => '0.27';                    # 5.12.0 core
+requires 'ExtUtils::Install'    => '1.54';                    # 5.10.1 core
 requires 'ExtUtils::Manifest'   => '1.58';                    # 5.13.3 core
 requires 'ExtUtils::ParseXS'    => '2.21';                    # 5.12.0 core
 requires 'IO::File'             => '1.13';                    # 5.8.8  core
 requires 'YAML::Tiny'           => '1.41';
 requires 'Archive::Tar'         => '1.52';                    # 5.10.1 core
-requires 'ExtUtils::Install'    => '1.54';                    # 5.10.1 core
-requires 'ExtUtils::Installed'  => '1.999_001';               # 5.10.1 core
 requires 'Module::Build'        => '0.36';                    # 5.11.3 core
 requires 'Text::Glob';
 requires 'CPAN'                 => $WANT_CPAN;
