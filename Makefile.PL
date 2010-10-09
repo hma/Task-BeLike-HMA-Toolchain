@@ -9,7 +9,7 @@
 #
 #  See http://dev.perl.org/licenses/
 #
-#  This module is distributed in the hope that it will be useful,
+#  This program is distributed in the hope that it will be useful,
 #  but WITHOUT ANY WARRANTY; without even the implied warranty of
 #  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 #
@@ -106,7 +106,7 @@ requires 'Storable'             => '2.19';                    # 5.8.9  core
 requires 'YAML::Syck'           => '1.14';
 requires 'YAML'                 => '0.71' if $] >= 5.008_001;
 requires 'YAML::XS'             => '0.33' if $] >= 5.008_005;
-requires 'Test::More'           => '0.62';                    # 5.8.8  core
+requires 'Test::More'           => '0.94';                    # 5.12.0 core
 requires 'Test::Harness'        => '3.17';                    # 5.10.1 core
 requires 'ExtUtils::CBuilder'   => '0.27';                    # 5.12.0 core
 requires 'ExtUtils::Install'    => '1.54';                    # 5.10.1 core

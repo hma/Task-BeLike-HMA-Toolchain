@@ -1,6 +1,6 @@
 Revision history for Task-BeLike-HMA-Toolchain
 
-0.02_01 Sep 19, 2010
+0.02_01 Oct 09, 2010
 
         - Made more dependencies explicit for ease of individual update
             * Compress::Zlib
@@ -16,8 +16,10 @@ Revision history for Task-BeLike-HMA-Toolchain
             * File::Which
             * Storable
             * Text::Glob
+        - Bumped to more recent versions
+            * Module::Build and dependencies
+            * Test::More
         - Added YAML::Syck for YAML support in very legacy Perls
-        - Bumped Module::Build and dependencies to more recent versions
         - Changed minimum Perl version to 5.6.1
 
 0.01    Sep 11, 2010
