@@ -1,6 +1,6 @@
 Revision history for Task-BeLike-HMA-Toolchain
 
-0.02_01 Oct 09, 2010
+0.03    Oct 10, 2010
 
         - Made more dependencies explicit for ease of individual update
             * Compress::Zlib
