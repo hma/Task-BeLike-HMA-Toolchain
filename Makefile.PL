@@ -79,6 +79,8 @@ repository "http://github.com/hma/$dist";
 #
 #  * LWP 5.836 base/message.t test 125 fails if Encode < 2.03
 #  * YAML::XS 0.33 t/regexp fails 5 tests of 18 if Perl < 5.8.5
+#  * YAML::XS 0.34 fails with 'undefined symbol: SvPV_const' if Perl < 5.8.8
+#    (RT #62054)
 #  * Term::ReadLine::Perl fails under CPANPLUS 0.88
 #  * clean run only on Perls >= 5.8.3
 #
@@ -105,7 +107,7 @@ requires 'File::HomeDir'        => '0.93';
 requires 'Storable'             => '2.19';                    # 5.8.9  core
 requires 'YAML::Syck'           => '1.14';
 requires 'YAML'                 => '0.71' if $] >= 5.008_001;
-requires 'YAML::XS'             => '0.33' if $] >= 5.008_005;
+requires 'YAML::XS'             => '0.34' if $] >= 5.008_008;
 requires 'Test::More'           => '0.94';                    # 5.12.0 core
 requires 'Test::Harness'        => '3.17';                    # 5.10.1 core
 requires 'ExtUtils::CBuilder'   => '0.27';                    # 5.12.0 core
