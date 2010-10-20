@@ -1,9 +1,10 @@
 Revision history for Task-BeLike-HMA-Toolchain
 
-0.04_01 Oct 11, 2010
+0.04_01 Oct 20, 2010
 
-        - Bumped YAML::XS to 0.34 and made its installation depended on
+        - Bumped YAML::XS to 0.34 and made its installation dependent on
           Perl 5.8.8 (RT #62054)
+        - Don't install YAML::Syck if YAML::XS can be installed
 
 0.03    Oct 10, 2010
 

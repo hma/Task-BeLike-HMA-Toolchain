@@ -105,9 +105,15 @@ requires 'File::Which';
 requires 'File::Temp'           => '0.22';                    # 5.10.1 core
 requires 'File::HomeDir'        => '0.93';
 requires 'Storable'             => '2.19';                    # 5.8.9  core
-requires 'YAML::Syck'           => '1.14';
 requires 'YAML'                 => '0.71' if $] >= 5.008_001;
-requires 'YAML::XS'             => '0.34' if $] >= 5.008_008;
+
+if ($] >= 5.008_008) {
+  requires 'YAML::XS'           => '0.34';
+}
+else {
+  requires 'YAML::Syck'         => '1.14';
+}
+
 requires 'Test::More'           => '0.94';                    # 5.12.0 core
 requires 'Test::Harness'        => '3.17';                    # 5.10.1 core
 requires 'ExtUtils::CBuilder'   => '0.27';                    # 5.12.0 core
