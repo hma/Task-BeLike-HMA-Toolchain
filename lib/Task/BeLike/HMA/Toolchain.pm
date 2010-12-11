@@ -19,7 +19,7 @@ Task::BeLike::HMA::Toolchain - HMA's Perl toolchain update
 
 =head1 VERSION
 
-This is version 0.04_01 of Task::BeLike::HMA::Toolchain as of Oct 11, 2010.
+This is version 0.04_01 of Task::BeLike::HMA::Toolchain as of Dec 11, 2010.
 
 =head1 SYNOPSIS
 

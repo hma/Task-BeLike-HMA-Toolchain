@@ -71,8 +71,8 @@ name       $dist;
 license    'perl';
 all_from   "lib/$path.pm";
 
-bugtracker "http://github.com/hma/$dist/issues";
-repository "http://github.com/hma/$dist";
+bugtracker "https://github.com/hma/$dist/issues";
+repository "https://github.com/hma/$dist";
 
 #
 #  notes
