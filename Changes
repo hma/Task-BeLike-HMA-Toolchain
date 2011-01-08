@@ -1,5 +1,12 @@
 Revision history for Task-BeLike-HMA-Toolchain
 
+0.04_02 Jan 08, 2011
+
+        - Add optional modules for enhancement of CPAN.pm
+            * DBI
+            * DBD::SQLite
+            * CPAN::SQLite
+
 0.04_01 Dec 11, 2010
 
         - Bumped YAML::XS to 0.34 and made its installation dependent on

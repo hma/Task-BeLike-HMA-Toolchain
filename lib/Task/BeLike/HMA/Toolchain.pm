@@ -1,15 +1,13 @@
 package Task::BeLike::HMA::Toolchain;
 
+use 5.006001;
+
 use strict;
 use warnings;
 
-use 5.006001;
-
-our $VERSION = '0.04_01';
+our $VERSION = '0.04_02';
 
 $VERSION = eval $VERSION;
-
-1;
 
 __END__
 
@@ -19,7 +17,7 @@ Task::BeLike::HMA::Toolchain - HMA's Perl toolchain update
 
 =head1 VERSION
 
-This is version 0.04_01 of Task::BeLike::HMA::Toolchain as of Dec 11, 2010.
+This is version 0.04_02 of Task::BeLike::HMA::Toolchain as of Jan 08, 2011.
 
 =head1 SYNOPSIS
 
@@ -56,7 +54,7 @@ Henning Manske <hma@cpan.org>
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright (c) 2010 Henning Manske. All rights reserved.
+Copyright (c) 2010-2011 Henning Manske. All rights reserved.
 
 This module is free software. You can redistribute it and/or modify it
 under the terms of either: the GNU General Public License as published

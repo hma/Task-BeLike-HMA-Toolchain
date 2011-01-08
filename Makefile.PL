@@ -1,7 +1,7 @@
 #
 #  Task::BeLike::HMA::Toolchain - Makefile.PL
 #
-#  Copyright (c) 2010 Henning Manske. All rights reserved.
+#  Copyright (c) 2010-2011 Henning Manske. All rights reserved.
 #
 #  This program is free software. You can redistribute it and/or modify it
 #  under the terms of either: the GNU General Public License as published
@@ -13,6 +13,8 @@
 #  but WITHOUT ANY WARRANTY; without even the implied warranty of
 #  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 #
+
+use 5.006001;
 
 use strict;
 use warnings;
@@ -82,6 +84,8 @@ repository "https://github.com/hma/$dist";
 #  * YAML::XS 0.34 fails with 'undefined symbol: SvPV_const' if Perl < 5.8.8
 #    (RT #62054)
 #  * Term::ReadLine::Perl fails under CPANPLUS 0.88
+#  * DBI 1.616 t/51dbm_file.t fails on Perl 5.8.1
+#  * URI 1.56 t/iri.t fails on Perl 5.8.1
 #  * clean run only on Perls >= 5.8.3
 #
 
@@ -126,6 +130,13 @@ requires 'Archive::Tar'         => '1.52';                    # 5.10.1 core
 requires 'Module::Build'        => '0.36';                    # 5.11.3 core
 requires 'Text::Glob';
 requires 'CPAN'                 => $WANT_CPAN;
+
+if ($] >= 5.008_001) {
+  requires 'DBI'                => '1.615';
+  requires 'DBD::SQLite'        => '1.30_06';
+  requires 'CPAN::SQLite'       => '0.199';
+}
+
 requires 'Term::ReadKey';
 requires 'Term::ReadLine::Perl';
 
