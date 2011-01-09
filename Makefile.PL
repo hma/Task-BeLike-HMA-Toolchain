@@ -86,6 +86,9 @@ repository "https://github.com/hma/$dist";
 #  * Term::ReadLine::Perl fails under CPANPLUS 0.88
 #  * DBI 1.616 t/51dbm_file.t fails on Perl 5.8.1
 #  * URI 1.56 t/iri.t fails on Perl 5.8.1
+#  * Storable 2.20, 2.25 t/dclone.t fail on Perl 5.8.0, pass on 5.6.2, 5.8.1
+#  * YAML::Syck 1.14, 1.17 t/3-objects.t fail on Perl 5.8.0, pass on 5.6.2, 5.8.1
+
 #  * clean run only on Perls >= 5.8.3
 #
 
@@ -112,13 +115,13 @@ if ($] >= 5.008) {
   requires 'File::HomeDir'      => '0.93';
 }
 
-requires 'Storable'             => '2.19';                    # 5.8.9  core
+requires 'Storable'             => '2.19' if $] != 5.008;     # 5.8.9  core
 requires 'YAML'                 => '0.71' if $] >= 5.008_001;
 
 if ($] >= 5.008_008) {
   requires 'YAML::XS'           => '0.34';
 }
-else {
+elsif ($] != 5.008) {
   requires 'YAML::Syck'         => '1.14';
 }
 
