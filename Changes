@@ -1,11 +1,12 @@
 Revision history for Task-BeLike-HMA-Toolchain
 
-0.04_02 Jan 08, 2011
+0.04_02 Jan 09, 2011
 
         - Add optional modules for enhancement of CPAN.pm
             * DBI
             * DBD::SQLite
             * CPAN::SQLite
+        - Disable Encode, File::Which, File::HomeDir, IO::File on 5.6.x
 
 0.04_01 Dec 11, 2010
 

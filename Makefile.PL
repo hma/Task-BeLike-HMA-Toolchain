@@ -95,7 +95,7 @@ repository "https://github.com/hma/$dist";
 
 requires 'version'              => '0.77';                    # 5.10.1 core
 requires 'Net::FTP'             => '2.75';                    # 5.8.5  core
-requires 'Encode'               => '2.03';
+requires 'Encode'               => '2.03' if $] >= 5.007_003;
 requires 'Test'                 => '1.25';                    # 5.8.5  core
 requires 'Pod::Man'             => '2.22';                    # 5.10.1 core
 requires 'Compress::Zlib'       => '2.024';                   # 5.12.0 core
@@ -105,9 +105,13 @@ requires 'ExtUtils::MakeMaker'  => '6.56';                    # 5.12.0 core
 requires 'Digest::SHA'          => '5.47';                    # 5.10.1 core
 requires 'File::Spec'           => '3.29';                    # 5.8.9  core
 requires 'File::Path'           => '2.08';                    # 5.11.1 core
-requires 'File::Which';
 requires 'File::Temp'           => '0.22';                    # 5.10.1 core
-requires 'File::HomeDir'        => '0.93';
+
+if ($] >= 5.008) {
+  requires 'File::Which';
+  requires 'File::HomeDir'      => '0.93';
+}
+
 requires 'Storable'             => '2.19';                    # 5.8.9  core
 requires 'YAML'                 => '0.71' if $] >= 5.008_001;
 
@@ -124,7 +128,7 @@ requires 'ExtUtils::CBuilder'   => '0.27';                    # 5.12.0 core
 requires 'ExtUtils::Install'    => '1.54';                    # 5.10.1 core
 requires 'ExtUtils::Manifest'   => '1.58';                    # 5.13.3 core
 requires 'ExtUtils::ParseXS'    => '2.21';                    # 5.12.0 core
-requires 'IO::File'             => '1.13';                    # 5.8.8  core
+requires 'IO::File'             => '1.13' if $] >= 5.008;     # 5.8.8  core
 requires 'YAML::Tiny'           => '1.41';
 requires 'Archive::Tar'         => '1.52';                    # 5.10.1 core
 requires 'Module::Build'        => '0.36';                    # 5.11.3 core
