@@ -1,6 +1,6 @@
 Revision history for Task-BeLike-HMA-Toolchain
 
-0.04_02 Jan 09, 2011
+0.04_02 Jan 15, 2011
 
         - Add optional modules for enhancement of CPAN.pm
             * DBI
@@ -10,6 +10,11 @@ Revision history for Task-BeLike-HMA-Toolchain
         - Require Scalar::Util 1.08 to workaround a bug in YAML::Tiny
           (RT #53490)
         - Disable Storable, YAML::Syck on 5.8.0
+        - Make more dependencies explicit which latest versions fail
+          on legacy Perls
+            * Pod::Simple
+            * HTML::Parser
+            * URI
 
 0.04_01 Dec 11, 2010
 
