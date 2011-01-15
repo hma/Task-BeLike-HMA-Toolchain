@@ -88,6 +88,7 @@ repository "https://github.com/hma/$dist";
 #  * URI 1.56 t/iri.t fails on Perl 5.8.1
 #  * Storable 2.20, 2.25 t/dclone.t fail on Perl 5.8.0, pass on 5.6.2, 5.8.1
 #  * YAML::Syck 1.14, 1.17 t/3-objects.t fail on Perl 5.8.0, pass on 5.6.2, 5.8.1
+#  * YAML::Syck 1.17 requires Test::More 0.88
 
 #  * clean run only on Perls >= 5.8.3
 #
@@ -117,6 +118,7 @@ if ($] >= 5.008) {
 
 requires 'Storable'             => '2.19' if $] != 5.008;     # 5.8.9  core
 requires 'YAML'                 => '0.71' if $] >= 5.008_001;
+requires 'Test::More'           => '0.94';                    # 5.12.0 core
 
 if ($] >= 5.008_008) {
   requires 'YAML::XS'           => '0.34';
@@ -125,7 +127,6 @@ elsif ($] != 5.008) {
   requires 'YAML::Syck'         => '1.14';
 }
 
-requires 'Test::More'           => '0.94';                    # 5.12.0 core
 requires 'Test::Harness'        => '3.17';                    # 5.10.1 core
 requires 'ExtUtils::CBuilder'   => '0.27';                    # 5.12.0 core
 requires 'ExtUtils::Install'    => '1.54';                    # 5.10.1 core
