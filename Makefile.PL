@@ -136,7 +136,7 @@ requires 'ExtUtils::Install'    => '1.54';                    # 5.10.1 core
 requires 'ExtUtils::Manifest'   => '1.58';                    # 5.13.3 core
 requires 'ExtUtils::ParseXS'    => '2.21';                    # 5.12.0 core
 requires 'IO::File'             => '1.13' if $] >= 5.008;     # 5.8.8  core
-requires 'Scalar::Util'         => '1.08';                    # fix for YAML::Tiny
+requires 'Scalar::Util'         => '1.18';                    # fix for YAML::Tiny 1.48+
 requires 'YAML::Tiny'           => '1.41';
 requires 'Archive::Tar'         => '1.52';                    # 5.10.1 core
 requires 'Module::Build'        => '0.36';                    # 5.11.3 core
