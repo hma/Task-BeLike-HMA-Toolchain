@@ -1,5 +1,10 @@
 Revision history for Task-BeLike-HMA-Toolchain
 
+0.06    Jul 15, 2011
+
+        - Require Perl::OSType and Module::Metadata for Module::Build 0.36_20+
+        - Require Scalar::Util 1.18 for YAML::Tiny 1.48+
+
 0.05    Jan 15, 2011
 
         - Add optional modules for enhancement of CPAN.pm
