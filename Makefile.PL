@@ -40,6 +40,7 @@ unless ($ENV{PERL5_CPAN_IS_RUNNING}) {
 }
 
 my $cpan = eval { CPAN->VERSION } || 0;
+my $mb   = eval { require Module::Build; Module::Build->VERSION } || 0;
 
 my $WANT_CPAN = '1.9301'; # version in Perl 5.8.9 core
 
@@ -139,6 +140,12 @@ requires 'IO::File'             => '1.13' if $] >= 5.008;     # 5.8.8  core
 requires 'Scalar::Util'         => '1.18';                    # fix for YAML::Tiny 1.48+
 requires 'YAML::Tiny'           => '1.41';
 requires 'Archive::Tar'         => '1.52';                    # 5.10.1 core
+
+if ($mb < 0.36) {
+  requires 'Perl::OSType'       => '1.000';                   # fix for Module::Build 0.36_19+
+  requires 'Module::Metadata'   => '1.000002';                # fix for Module::Build 0.36_20+
+}
+
 requires 'Module::Build'        => '0.36';                    # 5.11.3 core
 requires 'Text::Glob';
 requires 'CPAN'                 => $WANT_CPAN;
