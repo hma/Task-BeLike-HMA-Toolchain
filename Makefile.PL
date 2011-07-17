@@ -81,7 +81,7 @@ repository "https://github.com/hma/$dist";
 #  notes
 #
 #  * LWP 5.836 base/message.t test 125 fails if Encode < 2.03
-#  * YAML::XS 0.33 t/regexp fails 5 tests of 18 if Perl < 5.8.5
+#  * YAML::XS 0.33, 0.35 t/regexp fails 5 tests of 18 if Perl < 5.8.5
 #  * YAML::XS 0.34 fails with 'undefined symbol: SvPV_const' if Perl < 5.8.8
 #    (RT #62054)
 #  * Term::ReadLine::Perl fails under CPANPLUS 0.88
@@ -90,7 +90,6 @@ repository "https://github.com/hma/$dist";
 #  * Storable 2.20, 2.25 t/dclone.t fail on Perl 5.8.0, pass on 5.6.2, 5.8.1
 #  * YAML::Syck 1.14, 1.17 t/3-objects.t fail on Perl 5.8.0, pass on 5.6.2, 5.8.1
 #  * YAML::Syck 1.17 requires Test::More 0.88
-
 #  * clean run only on Perls >= 5.8.3
 #
 
@@ -124,8 +123,8 @@ requires 'Storable'             => '2.19' if $] != 5.008;     # 5.8.9  core
 requires 'YAML'                 => '0.71' if $] >= 5.008_001;
 requires 'Test::More'           => '0.94';                    # 5.12.0 core
 
-if ($] >= 5.008_008) {
-  requires 'YAML::XS'           => '0.34';
+if ($] >= 5.008_005) {
+  requires 'YAML::XS'           => '0.35';
 }
 elsif ($] != 5.008) {
   requires 'YAML::Syck'         => '1.14';
