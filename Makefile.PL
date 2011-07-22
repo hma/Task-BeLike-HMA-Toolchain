@@ -150,7 +150,7 @@ requires 'Module::Build'        => '0.36';                    # 5.11.3 core
 requires 'Text::Glob';
 requires 'CPAN'                 => $WANT_CPAN;
 
-if ($] >= 5.008_001) {
+if ($] >= 5.008_001 && index( $^X, 'perlbrew' ) == -1) {
   requires 'DBI'                => '1.615';
   requires 'DBD::SQLite'        => '1.30_06';
   requires 'CPAN::SQLite'       => '0.199';
