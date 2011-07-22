@@ -103,6 +103,7 @@ requires 'Encode'               => '2.03' if $] >= 5.007_003;
 requires 'Test'                 => '1.25';                    # 5.8.5  core
 requires 'Pod::Simple'          => '3.11';
 requires 'Pod::Man'             => '2.22';                    # 5.10.1 core
+requires 'Pod::Usage'           => '1.36';                    # 5.10.1 core
 requires 'Compress::Zlib'       => '2.024';                   # 5.12.0 core
 requires 'Digest::MD5'          => '2.39';                    # 5.10.1 core
 requires 'HTML::Parser'         => '3.62';
