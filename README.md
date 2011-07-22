@@ -7,7 +7,7 @@ toolchain modules to recent versions.
 See "Makefile.PL" for details.
 
 
-SYNOPSIS / INSTALLATION
+# SYNOPSIS / INSTALLATION
 
     perl Makefile.PL
     make
@@ -26,7 +26,7 @@ SYNOPSIS / INSTALLATION
     make install
 
 
-COPYRIGHT AND LICENSE
+# COPYRIGHT AND LICENSE
 
 Copyright (c) 2010-2011 Henning Manske. All rights reserved.
 
