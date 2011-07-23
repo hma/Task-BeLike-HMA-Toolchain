@@ -19,7 +19,7 @@ use 5.006001;
 use strict;
 use warnings;
 
-use inc::Module::Install 1.00;
+use inc::Module::Install 1.01;
 
 
 
