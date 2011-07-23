@@ -1,10 +1,12 @@
 Task::BeLike::HMA::Toolchain
 ============================
 
-Task::BeLike::HMA::Toolchain is HMA's personal Task to update the Perl
+Task::BeLike::HMA::Toolchain is HMA's personal [Task] [1] to update the Perl
 toolchain modules to recent versions.
 
 See "Makefile.PL" for details.
+
+  [1]: http://search.cpan.org/perldoc?Task
 
 
 # SYNOPSIS / INSTALLATION

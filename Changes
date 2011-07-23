@@ -1,5 +1,13 @@
 Revision history for Task-BeLike-HMA-Toolchain
 
+0.07    Jul 23, 2011
+
+        - FIX: Updating Pod::Man requires Pod::Usage to be updated too
+        - Don't install CPAN::SQLite under perlbrewed Perls
+        - Latest YAML::XS (0.35) available again on Perl 5.8.5
+        - Convert README to Markdown
+        - Upgrade to Module::Install 1.01
+
 0.06    Jul 15, 2011
 
         - Require Perl::OSType and Module::Metadata for Module::Build 0.36_20+
