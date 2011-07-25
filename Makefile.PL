@@ -44,7 +44,9 @@ my $mb   = eval { require Module::Build; Module::Build->VERSION } || 0;
 
 my $WANT_CPAN = '1.9301'; # version in Perl 5.8.9 core
 
-if ($cpan < $WANT_CPAN) {
+my $new_cpan  = $cpan < $WANT_CPAN;
+
+if ($new_cpan) {
   no warnings 'once';
   *MY::postamble = sub {
     print "\n*** Please run 'cpan' after 'make' to update CPAN.pm config.\n\n";
@@ -145,6 +147,11 @@ requires 'Archive::Zip'         => '1.30';
 if ($mb < 0.36) {
   requires 'Perl::OSType'       => '1.000';                   # fix for Module::Build 0.36_19+
   requires 'Module::Metadata'   => '1.000002';                # fix for Module::Build 0.36_20+
+}
+if ($mb < 0.36 || $new_cpan) {
+  requires 'JSON::PP'           => '2.27200';                 # 5.15.0 core
+  requires 'Parse::CPAN::Meta'  => '1.4401';                  # 5.14.0 core
+  requires 'CPAN::Meta'         => '2.110930';                # 5.15.0 core
 }
 
 requires 'Module::Build'        => '0.36';                    # 5.11.3 core

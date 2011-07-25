@@ -4,7 +4,10 @@ Revision history for Task-BeLike-HMA-Toolchain
 
         - Add optional modules for enhancement of CPAN.pm
             * Archive::Zip
+            * CPAN::Meta
+            * JSON::PP
             * Module::CoreList
+            * Parse::CPAN::Meta
         - Remove YAML::Tiny
 
 0.07    Jul 23, 2011
