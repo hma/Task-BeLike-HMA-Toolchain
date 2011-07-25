@@ -1,5 +1,12 @@
 Revision history for Task-BeLike-HMA-Toolchain
 
+0.07_01 Jul 25, 2011
+
+        - Add optional modules for enhancement of CPAN.pm
+            * Archive::Zip
+            * Module::CoreList
+        - Remove YAML::Tiny
+
 0.07    Jul 23, 2011
 
         - FIX: Updating Pod::Man requires Pod::Usage to be updated too

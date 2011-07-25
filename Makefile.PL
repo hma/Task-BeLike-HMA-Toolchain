@@ -120,6 +120,7 @@ if ($] >= 5.008) {
   requires 'File::HomeDir'      => '0.93';
 }
 
+requires 'Module::CoreList'     => '2.54';                    # 5.15.1 core
 requires 'Storable'             => '2.19' if $] != 5.008;     # 5.8.9  core
 requires 'YAML'                 => '0.71' if $] >= 5.008_001;
 requires 'Test::More'           => '0.94';                    # 5.12.0 core
@@ -137,9 +138,9 @@ requires 'ExtUtils::Install'    => '1.54';                    # 5.10.1 core
 requires 'ExtUtils::Manifest'   => '1.58';                    # 5.13.3 core
 requires 'ExtUtils::ParseXS'    => '2.21';                    # 5.12.0 core
 requires 'IO::File'             => '1.13' if $] >= 5.008;     # 5.8.8  core
-requires 'Scalar::Util'         => '1.18';                    # fix for YAML::Tiny 1.48+
-requires 'YAML::Tiny'           => '1.41';
+requires 'Scalar::Util'         => '1.18';                    # 5.8.8  core
 requires 'Archive::Tar'         => '1.52';                    # 5.10.1 core
+requires 'Archive::Zip'         => '1.30';
 
 if ($mb < 0.36) {
   requires 'Perl::OSType'       => '1.000';                   # fix for Module::Build 0.36_19+
