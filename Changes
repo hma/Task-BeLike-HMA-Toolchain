@@ -1,5 +1,17 @@
 Revision history for Task-BeLike-HMA-Toolchain
 
+0.07_02 Aug 01, 2011
+
+        - Add Version::Requirements
+        - Adjust required versions to versions in core
+          * ExtUtils::Manifest from 1.58 to 1.57
+          * Module::Build from 0.36 to 0.3603
+          * Pod::Simple from 3.11 to 3.07
+          * version.pm from 0.77 to 0.88
+        - Optimized installation order
+        - File::Which and File::HomeDir don't depend on Perl 5.8+
+        - Don't install Pod::Simple, Pod::Man, Pod::Usage on Perl 5.8.0
+
 0.07_01 Jul 25, 2011
 
         - Add optional modules for enhancement of CPAN.pm

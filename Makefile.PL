@@ -40,11 +40,16 @@ unless ($ENV{PERL5_CPAN_IS_RUNNING}) {
 }
 
 my $cpan = eval { CPAN->VERSION } || 0;
+my $eumm = eval { require ExtUtils::MakeMaker; ExtUtils::MakeMaker->VERSION } || 0;
 my $mb   = eval { require Module::Build; Module::Build->VERSION } || 0;
 
 my $WANT_CPAN = '1.9301'; # version in Perl 5.8.9 core
+my $WANT_EUMM = '6.56';   # 5.12.0
+my $WANT_MB   = '0.3603'; # 5.12.0
 
-my $new_cpan  = $cpan < $WANT_CPAN;
+my $new_cpan = eval $cpan < $WANT_CPAN;
+my $new_eumm = eval $eumm < $WANT_EUMM;
+my $new_mb   = $] != 5.008 && eval $mb < $WANT_MB;
 
 if ($new_cpan) {
   no warnings 'once';
@@ -92,76 +97,78 @@ repository "https://github.com/hma/$dist";
 #  * Storable 2.20, 2.25 t/dclone.t fail on Perl 5.8.0, pass on 5.6.2, 5.8.1
 #  * YAML::Syck 1.14, 1.17 t/3-objects.t fail on Perl 5.8.0, pass on 5.6.2, 5.8.1
 #  * YAML::Syck 1.17 requires Test::More 0.88
-#  * clean run only on Perls >= 5.8.3
+#  * LWP 6.0+ requires Perl 5.8.8+
+#  * clean run only on Perls >= 5.8.9
 #
 
 #
 #  udate Perl toolchain modules to recent versions
 #
 
-requires 'version'              => '0.77';                    # 5.10.1 core
-requires 'Net::FTP'             => '2.75';                    # 5.8.5  core
-requires 'Encode'               => '2.03' if $] >= 5.007_003;
-requires 'Test'                 => '1.25';                    # 5.8.5  core
-requires 'Pod::Simple'          => '3.11';
-requires 'Pod::Man'             => '2.22';                    # 5.10.1 core
-requires 'Pod::Usage'           => '1.36';                    # 5.10.1 core
-requires 'Compress::Zlib'       => '2.024';                   # 5.12.0 core
-requires 'Digest::MD5'          => '2.39';                    # 5.10.1 core
-requires 'HTML::Parser'         => '3.62';
-requires 'URI'                  => '1.40';
-requires 'LWP'                  => '5.836';
-requires 'ExtUtils::MakeMaker'  => '6.56';                    # 5.12.0 core
-requires 'Digest::SHA'          => '5.47';                    # 5.10.1 core
-requires 'File::Spec'           => '3.29';                    # 5.8.9  core
-requires 'File::Path'           => '2.08';                    # 5.11.1 core
-requires 'File::Temp'           => '0.22';                    # 5.10.1 core
+requires 'Test::Harness'           => '3.17';                    # 5.10.1
+requires 'Test::More'              => '0.94';                    # 5.12.0
+requires 'Test'                    => '1.25';                    # 5.8.5
+requires 'Scalar::Util'            => '1.18';                    # 5.8.8
+requires 'File::Spec'              => '3.29';                    # 5.8.9
+requires 'File::Path'              => '2.08';                    # 5.11.1
+requires 'File::Temp'              => '0.22';                    # 5.10.1
+requires 'version'                 => '0.88';                    # 5.14.0
+requires 'Module::CoreList'        => '2.54';                    # 5.15.1
+requires 'ExtUtils::Install'       => '1.54';                    # 5.10.1
+requires 'ExtUtils::Manifest'      => '1.57';                    # 5.12.0
+requires 'ExtUtils::CBuilder'      => '0.27';                    # 5.12.0
+requires 'ExtUtils::ParseXS'       => '2.21';                    # 5.12.0
 
-if ($] >= 5.008) {
-  requires 'File::Which';
-  requires 'File::HomeDir'      => '0.93';
+if ($new_cpan || $new_mb || $new_eumm) {
+  requires 'Version::Requirements' => '0.101020';                # 5.14.0
+  requires 'JSON::PP'              => '2.27200';                 # 5.15.0
+  requires 'Parse::CPAN::Meta'     => '1.4401';                  # 5.14.0
+  requires 'CPAN::Meta'            => '2.110930';                # 5.15.0
+}
+requires 'ExtUtils::MakeMaker'     => $WANT_EUMM;
+
+if ($] != 5.008) {
+  requires 'Pod::Simple'           => '3.07';                    # 5.10.1
+  requires 'Pod::Man'              => '2.22';                    # 5.10.1
+  requires 'Pod::Usage'            => '1.36';                    # 5.10.1
 }
 
-requires 'Module::CoreList'     => '2.54';                    # 5.15.1 core
-requires 'Storable'             => '2.19' if $] != 5.008;     # 5.8.9  core
-requires 'YAML'                 => '0.71' if $] >= 5.008_001;
-requires 'Test::More'           => '0.94';                    # 5.12.0 core
+requires 'Net::FTP'                => '2.75';                    # 5.8.5
+requires 'Encode'                  => '2.03' if $] >= 5.007_003;
+requires 'Compress::Zlib'          => '2.024';                   # 5.12.0
+requires 'Digest::MD5'             => '2.39';                    # 5.10.1
+requires 'Digest::SHA'             => '5.47';                    # 5.10.1
+requires 'HTML::Parser'            => '3.62';
+requires 'URI'                     => '1.40';
+requires 'LWP'                     => '5.836';
+requires 'File::Which'             => '1.07';
+requires 'File::HomeDir'           => '0.93';
 
 if ($] >= 5.008_005) {
-  requires 'YAML::XS'           => '0.35';
+  requires 'YAML::XS'              => '0.35';
 }
 elsif ($] != 5.008) {
-  requires 'YAML::Syck'         => '1.14';
+  requires 'YAML::Syck'            => '1.14';
 }
+requires 'YAML'                    => '0.71' if $] >= 5.008_001;
 
-requires 'Test::Harness'        => '3.17';                    # 5.10.1 core
-requires 'ExtUtils::CBuilder'   => '0.27';                    # 5.12.0 core
-requires 'ExtUtils::Install'    => '1.54';                    # 5.10.1 core
-requires 'ExtUtils::Manifest'   => '1.58';                    # 5.13.3 core
-requires 'ExtUtils::ParseXS'    => '2.21';                    # 5.12.0 core
-requires 'IO::File'             => '1.13' if $] >= 5.008;     # 5.8.8  core
-requires 'Scalar::Util'         => '1.18';                    # 5.8.8  core
-requires 'Archive::Tar'         => '1.52';                    # 5.10.1 core
-requires 'Archive::Zip'         => '1.30';
+requires 'IO::File'                => '1.13' if $] >= 5.008;     # 5.8.8
+requires 'Storable'                => '2.19' if $] != 5.008;     # 5.8.9
+requires 'Archive::Tar'            => '1.52';                    # 5.10.1
+requires 'Archive::Zip'            => '1.30';
 
-if ($mb < 0.36) {
-  requires 'Perl::OSType'       => '1.000';                   # fix for Module::Build 0.36_19+
-  requires 'Module::Metadata'   => '1.000002';                # fix for Module::Build 0.36_20+
+if ($new_mb) {
+  requires 'Perl::OSType'          => '1.000';                   # fix for Module::Build 0.36_19+
+  requires 'Module::Metadata'      => '1.000002';                # fix for Module::Build 0.36_20+
 }
-if ($mb < 0.36 || $new_cpan) {
-  requires 'JSON::PP'           => '2.27200';                 # 5.15.0 core
-  requires 'Parse::CPAN::Meta'  => '1.4401';                  # 5.14.0 core
-  requires 'CPAN::Meta'         => '2.110930';                # 5.15.0 core
-}
-
-requires 'Module::Build'        => '0.36';                    # 5.11.3 core
+requires 'Module::Build'           => $WANT_MB if $] != 5.008;
 requires 'Text::Glob';
-requires 'CPAN'                 => $WANT_CPAN;
+requires 'CPAN'                    => $WANT_CPAN;
 
 if ($] >= 5.008_001 && index( $^X, 'perlbrew' ) == -1) {
-  requires 'DBI'                => '1.615';
-  requires 'DBD::SQLite'        => '1.30_06';
-  requires 'CPAN::SQLite'       => '0.199';
+  requires 'DBI'                   => '1.615';
+  requires 'DBD::SQLite'           => '1.30_06';
+  requires 'CPAN::SQLite'          => '0.199';
 }
 
 requires 'Term::ReadKey';
